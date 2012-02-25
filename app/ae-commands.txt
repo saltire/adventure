@@ -1,0 +1,81 @@
+tests
+
+game
+	input
+
+player
+	room
+	carryingsomething
+	wearingsomething
+
+room
+	exitexists
+
+noun
+	nounloc
+	present
+	inroom
+	ininv
+	worn
+	wearable
+	hascontents
+	contained
+	somewhere
+	together
+
+numbers
+	var
+	turns
+	random
+
+
+actions
+
+game
+	message
+	pause
+	save
+	load
+
+player
+	move
+	take
+	drop
+	wear
+	inv
+
+room
+	look
+	setroomdesc
+	addroomnote
+	removeroomnote
+	clearroomnotes
+
+noun
+	examine
+	showcontents
+	setnoundesc
+	addnounnote
+	removenounnote
+	clearnounnotes
+
+	addnoun
+	addtoroom
+	addtonoun
+	addtonounloc
+
+	sendnoun
+	sendtoroom
+	sendtonoun
+	sendtonounloc
+
+	removenoun
+	destroy
+	sendallinroom
+	removeallinroom
+	destroyallinroom
+	swapnouns
+
+vars
+	setvar
+	adjustvar

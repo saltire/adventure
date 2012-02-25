@@ -1,0 +1,30 @@
+body { background: #808073; color: #f1f1da; font-size: 18px;  font-family: calibri, helvetica, arial, sans-serif; }
+div#main { width: 666px; margin: 20px auto; }
+div#output { height: 500px; padding: 10px; color: #fff; overflow: auto; }
+
+p { margin: 0 0 1em; }
+
+a { color: #808073; text-decoration: none; }
+a:visited { color: #808073; }
+a:hover, a:focus { background: #f1f1da; }
+
+form { margin: 20px 0; }
+input, button { width: 100%; border: 0; background: transparent; color: #f1f1da; font-size: 20px;
+		font-family: calibri, helvetica, arial, sans-serif; }
+
+#commandform { width: 290px; height: 1.5em; float: left; }
+#commandform .prompt { width: 15px; height: 100%; float: left; }
+#commandform #command { width: 250px; border-width: 0 0 1px 0; float: left; }
+#commandform .enter { width: 25px; padding: 0; text-align: center; float: left; }
+
+#continue { width: 125px; float: left; }
+#goback { width: 175px; float: left; }
+
+#newgame { width: 125px; margin-left: 18px; text-align: right; float: right; }
+#help { width: 75px; margin-left: 18px; float: right; }
+img#loader { margin-top: 25px; float: right; display: none; }
+
+.line { border: solid #f1f1da; border-width: 0 0 1px 0; }
+.border { border: 1px solid #B3B3A1; }
+
+.hidden { display: none; }

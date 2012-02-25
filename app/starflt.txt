@@ -1,0 +1,923 @@
+   10 cm$="":no=9:nr=22:dimrf(nr),ma(nr,5),ob(no),ob$(no),o2$(no),id(1),od(1)
+   15 print"{clr}{wht}";chr$(14);:poke53280,12:poke53281,12:gosub63000
+   20 q$=chr$(221):c$=chr$(13)
+   30 gosub50000:gosub55000:gosub60000
+   40 id(0)=0:od(0)=1:id(1)=1:od(1)=0:in=0:mi=4:r=1:vf=0:lf=0:af=0:rf=0:df=0:sf=0
+   50 pi=1:zf=0:fr=21:h=3:pf=0:cf=0:ef=0:sd=-1:as=0:bf=0:hp=3:ff=0:mf=0:p=1:d=8
+   90 gosub30000:print:gosub49000
+  100 iffr<>rthenff=0:goto200
+  103 print:print"&ou are aware of a powerfulS invisible"
+  104 print"force in the room with youQ":print
+  105 ifff=0thenff=1:goto200
+  110 ifint(rnd(1)*2)<>1then200
+  111 hp=hp-1:ifhp<2then120
+  112 print"&our entire nervous system is jolted by"
+  113 print"a mental force the likes of which you"
+  114 print"have never experiencedQ &our head jerks"
+  115 print"back and your mouth opens in an involunR";
+  116 print"tary screamQ 9rom the neck down your"
+  117 print"body is completely paralyzedS immobileD"
+  118 print"then the force relents and you go limpQ":goto200
+  120 ifhp<1then130
+  121 print"> second joltS more powerful than the"
+  122 print"first and infinitely more painfulS"
+  123 print"surges through your nervous systemQ 9or"
+  124 print"a moment you do not even recognize the"
+  125 print"sound of your own screamQ >fter what"
+  126 print"seems like several eternitiesS the pain"
+  127 print"goes awayQ":goto200
+  130 print"+he third jolt strikes you like a"
+  131 print"crackling bolt of lightningQ +he duraR"
+  132 print"tion is shorter this timeS because your"
+  133 print"weakened heart is incapable of susR"
+  134 print"taining further pain of this intensityQ"
+  135 print"(ithin seconds you slump dead against"
+  136 print"the nearest wallS wondering in your last";
+  137 print"instant of consciousness just who will"
+  138 print"discover UyourU decaying skeletonQQQQ":goto7020
+  200 ifaf<>1then240
+  210 print:print"+he shipXs computer announcesE"
+  220 print:printq$">cknowledgement not receivedQ"
+  230 print"-equest cancelled^"q$:af=0
+  240 ifaf=2thenaf=1
+  250 ifsd=-1then300
+  260 sd=sd-1:ifsd=0then800
+  270 ifob(5)<>-1andob(5)<>rthen300
+  280 print:print"> glowing numeral ";
+  284 printchr$(255-asc(mid$(str$(sd),2,1)));
+  286 print" appears on one"
+  290 print"side of the sonic disruptorQ"
+  300 rem
+  500 print:cm$="":sys831:print:print:ifcm$=""then500
+  510 c=0:v$="":n$=""
+  520 c=c+1:ifc>len(cm$)then550
+  530 w$=mid$(cm$,c,1):ifw$=" "then545
+  540 v$=v$+w$:goto520
+  545 ifc=>len(cm$)then550
+  547 ifmid$(cm$,c+1,1)=" "thenc=c+1:goto545
+  550 c=c+1:ifc>len(cm$)then580
+  560 w$=mid$(cm$,c,1):ifw$=" "then580
+  570 n$=n$+w$:goto550
+  580 ifv$=""then500
+  590 tv$=v$:iflen(v$)>3thenv$=left$(v$,3)
+  600 tn$=n$:iflen(n$)>3thenn$=left$(n$,3)
+  610 ifv$="n"orv$="s"orv$="e"orv$="w"orv$="u"orv$="d"thenn$=v$:v$="go"
+  620 ifv$="nor"orv$="sou"orv$="eas"orv$="wes"orv$="up"orv$="dow"thenn$=v$:v$="go"
+  630 ifv$="for"orv$="aft"orv$="sta"orv$="por"thenn$=v$:v$="go"
+  640 ifn$="sui"thenn$="spa"
+  650 ifn$="son"thenn$="dis"
+  660 ifn$="bar"thenn$="mag"
+  750 fori=0to5:nx=ma(fr,i)and127:ifnx<>rthennext:goto760
+  751 fr=nx
+  760 rem
+  799 goto1000
+  800 print:ifob(5)<>randob(5)<>-1then820
+  802 print"+he sonic disruptor bursts forth with"
+  803 print"a spray of high frequency sound that"
+  804 print"atomizes everything in its immediate"
+  805 print"vicinityQQQyourself includedQ";:ifr<>17thenprint:goto7020
+  806 print" 9or what":print"itXs worthS you did succeed in destroyR"
+  807 print"ing the piece of furniture that had"
+  808 print"been blocking the stairshaftQ":goto7020
+  820 ob(5)=ob(5)+128:ob$(5)="a molten sonic disruptor"
+  821 print"6n the distanceS you hear the piercing"
+  822 print"whine of a sonic disruptor atomizing"
+  823 print"everything in its vicinity";:if(ob(5)and127)<>17thenprint"Q":goto200
+  824 print"S accompanied":print"by the sound of shattering plasticQ"
+  825 ma(17,5)=130:goto200
+ 1000 ifv$="ent"then1070
+ 1005 ifv$<>"go"andv$<>"wal"andv$<>"run"then2000
+ 1010 ifn$="nor"orn$="n"orn$="for"orn$="f"thendi=0:goto1500
+ 1020 ifn$="sou"orn$="s"orn$="aft"orn$="a"thendi=1:goto1500
+ 1030 ifn$="eas"orn$="e"orn$="sta"orn$="r"thendi=2:goto1500
+ 1040 ifn$="wes"orn$="w"orn$="por"orn$="l"thendi=3:goto1500
+ 1050 ifn$="up"orn$="u"thendi=4:goto1500
+ 1060 ifn$="dow"orn$="d"thendi=5:goto1500
+ 1070 ifn$<>"boo"orr<>2then1080
+ 1071 print"&ou donXt really want to do thatQ 6f"
+ 1072 print"you reRenter the suspended animation"
+ 1073 print"booth and revert to cold sleepS the"
+ 1074 print"ship will automatically return to its"
+ 1075 print"home portQ &our mission will be a"
+ 1076 print"failureQ":goto100
+ 1080 rem
+ 1490 print"&ou canXt go there^":goto100
+ 1500 ifma(r,di)=0then1990
+ 1510 ifma(r,di)>127then1600
+ 1520 gosub1590:r=ma(r,di):goto90
+ 1590 ifmf=0thenreturn
+ 1592 mf=0:print"9irstS you tug yourself free of the"
+ 1595 print"bar magnetQQQQ":print:return
+ 1600 ifma(r,di)<>128then1610
+ 1601 print"&ou donXt really want to go that wayQ"
+ 1602 print"+he passenger vault is so large that"
+ 1603 print"you could wander in it for daysS to no"
+ 1604 print"particular availQ":goto100
+ 1610 ifma(r,di)<>135andma(r,di)<>136then1620
+ 1612 gosub1590:print"&ou step cautiously over a pair of"
+ 1613 print"skeletons that have fallen together"
+ 1614 print"in the middle of the hallwayQ":print:r=ma(r,di)and127:goto90
+ 1620 ifma(r,di)<>129then1630
+ 1621 print"+here is a large item of plastic furniR"
+ 1622 print"ture blocking your descentQ =elow the"
+ 1623 print"plasticS you can just make out the"
+ 1624 print"skeletal remains of one of the crew"
+ 1625 print"membersS who had apparently placed the"
+ 1626 print"furniture here in an unsuccessful"
+ 1627 print"attempt to ward off an attackerQ":goto100
+ 1630 ifma(r,di)<>130then1640
+ 1632 gosub1590:print"&ou descend into the shaftS picking your";
+ 1633 print"your way past the shattered remains of"
+ 1634 print"the piece of plastic furniture and the"
+ 1635 print"skeleton that was holding it in placeQ":print:r=13:print:goto90
+ 1640 ifma(r,di)<>140then1660
+ 1641 ifob(0)>-1thengosub1590
+ 1642 print"+he hall ahead of you is crammed with"
+ 1643 print"debris and the skeletal remains of the"
+ 1644 print">rmstrongXs crew membersQ ";
+ 1645 ifob(0)<0then1650
+ 1646 print"&ou are":print"barely able to squeeze through the":print"debrisQ"
+ 1647 print:r=22:goto90
+ 1650 print"*nfortunatelyS";:print"you will need to drop your bulky space"
+ 1651 print"suit before you can squeeze through the"
+ 1652 print"debrisQ":goto100
+ 1660 rem
+ 1990 print"&ou canXt go that wayQ":goto100
+ 2000 ifv$<>"loo"andv$<>"l"andv$<>"exa"then4000
+ 2010 if(v$="loo"orv$="l")andn$=""thengosub30010:print:gosub49000:goto100
+ 2020 ifn$<>"lig"then2030
+ 2021 ifr<>1then3990
+ 2022 iflf<>0thenprint"+he light is no longer blinkingQ":goto100
+ 2023 print"6t is blinking rapidlyQ =elow the light"
+ 2024 print"is a small blue buttonQ":goto100
+ 2030 if(n$<>"ins"andn$<>"gau"andn$<>"con")orr<>1then2040
+ 2032 print"+he console is covered mostly with"
+ 2033 print"digital gauges that allow you to moniR"
+ 2034 print"tor the functioning of the shipXs"
+ 2035 print"computerQ 6n the center of the consoleS"
+ 2036 print"howeverS are four buttonsS one greenS"
+ 2037 print"one yellowS one orangeS and one redQ":iflf=1thengoto100
+ 2038 print"+here is a light flashing near the top"
+ 2039 print"of the consoleQ":goto100
+ 2040 ifn$="but"then5010
+ 2050 ifn$<>"red"orr<>1then2060
+ 2051 print"=eneath the red button are the words"
+ 2052 print",+>+*, -:/0-+Q":goto100
+ 2060 ifn$<>"gre"orr<>1then2070
+ 2061 print"=eneath the green button is the word"
+ 2062 print"><410(3:;8:Q":goto100
+ 2070 ifn$<>"ora"orr<>1then2080
+ 2071 print"=eneath the orange button are the words"
+ 2072 print";0<4618 <01+-03Q":goto100
+ 2080 ifn$<>"yel"orr<>1then2090
+ 2082 print"=eneath the yellow button are the words"
+ 2083 print"+><7&01 =:>2Q":goto100
+ 2090 if(n$<>"com"andn$<>"ter")orr<>6then2100
+ 2091 print"0n the video display you see the wordsE":print
+ 2092 printq$",76/X, 308S :1+-& MSLKFQIQ":print
+ 2093 print"  "q$"(hatever it isS we canXt seem to stop";
+ 2094 print"itQ +he carnage is horribleQ 2ost of"
+ 2095 print"the crew has succumbedS and 6 donXt"
+ 2096 print"know how much longer 6 can hold outQ"
+ 2097 print":ven nowS the screams in the distance"
+ 2098 print"are hideousQ 6s there any way to"q$:print
+ 2099 print">t that pointS the message endsQ":goto100
+ 2100 ifn$<>"ske"orr<>6then2110
+ 2101 print"6t appears to have been typing at the"
+ 2102 print"computer terminalQ":goto100
+ 2110 ifn$<>"boo"orr<>9then2120
+ 2111 print"+hrough the frosty window of the nearest";
+ 2112 print"booth you see the face of a young girlS"
+ 2113 print"apparently well and unharmed by whatever";
+ 2114 print"has struck the shipXs crewQ":goto100
+ 2120 ifn$<>"uni"orr<>13orob(3)<>0then2130
+ 2121 print"&ou find something in the pocketQ":ob(3)=r:goto100
+ 2130 ifn$<>"uni"orr<>20orob(4)<>0then2140
+ 2131 print"&ou find something in the pocketQ":ob(4)=r:goto100
+ 2140 ifn$<>"pou"then2150
+ 2141 ifob(1)<>randob(1)>-1then3990
+ 2142 ifzf<2thenprint"6tXs heavyQ":goto100
+ 2143 ifpi>0thenprint"+hereXs something insideQ":goto100
+ 2150 ifn$<>"ske"orr<>13then2160
+ 2151 print"+he skeleton is sprawled across the"
+ 2152 print"instrument consoleQ":goto100
+ 2160 if(n$<>"con"andn$<>"gau"andn$<>"ins")orr<>13then2170
+ 2161 print">lthough the skeleton is covering most"
+ 2162 print"of the consoleS you can see a flashing"
+ 2163 print"sign at one endQ =elow the sign is a"
+ 2164 print"yellow buttonQ":goto100
+ 2170 ifn$<>"yel"orr<>13then2180
+ 2171 print"=eneath the yellow button are the words"
+ 2172 print"/*-696<>+601 <01+-03Q":goto100
+ 2180 ifn$<>"sig"orr<>13then2190
+ 2181 ifpf=3then2185
+ 2182 print"+he flashing sign readsE"
+ 2183 print:print">6- 3:):3 +0'6<^"
+ 2184 print"/-:,, /*-696<>+601 <01+-03":print"+7-:: +62:,^":goto100
+ 2185 print"+he sign is no longer flashingQ":goto100
+ 2190 if(n$<>"nav"andn$<>"con")orr<>19then2200
+ 2191 print"<onsidering your rudimentary knowledge"
+ 2192 print"of megaship navigationS you shouldnXt"
+ 2193 print"even be UthinkingU about using the naviR";
+ 2194 print"gational override controlsQ":goto100
+ 2200 ifn$<>"bla"orr<>20then2210
+ 2201 print"=eneath the black button are the words"
+ 2202 print":2:-8:1<& 2016+0-618 ,&,+:2Q":goto100
+ 2210 ifn$<>"whi"orr<>20then2220
+ 2211 print"=eneath the white button is the word"
+ 2212 print"><410(3:;8:Q":goto100
+ 2220 if(n$<>"scr"andn$<>"vid")orr<>20orcf<2then2230
+ 2221 print"+he video screen is blankQ":goto100
+ 2230 ifn$<>"dis"then2240
+ 2231 ifob(5)<>-1andob(5)<>rthen3990
+ 2232 print"+he sonic disruptor is made of two inR"
+ 2233 print"dependently rotatable metal cylindersS"
+ 2234 print"mounted end to endQ":goto100
+ 2240 ifn$<>"box"then2250
+ 2241 ifob(6)<>-1andob(6)<>rthen3990
+ 2242 ifbf<2thenprint"+here seems to be something insideQ":goto100
+ 2243 print"6tXs emptyQ":goto100
+ 2250 if(n$<>"ske"andn$<>"cap"andn$<>"uni")orr<>19then2260
+ 2251 print"5ust beneath the collar of the captainXs";
+ 2252 print"uniform is the monogram 5+4Q":goto100
+ 2260 ifn$<>"ske"orr<>20then2270
+ 2261 print"+he skull is cracked where it fell"
+ 2262 print"against the panelQ":goto100
+ 2270 ifn$<>"spa"then2280
+ 2271 ifob(0)>-1andob(0)<>rthen3990
+ 2272 print">lmost the entire suitS including the"
+ 2273 print"flexible portionsS is made of heavily"
+ 2274 print"metallized fabricS apparently incorpoR"
+ 2275 print"rating some sort of iron meshQ":goto100
+ 2280 ifn$<>"rad"then2290
+ 2281 ifob(8)<>-1andob(8)<>rthen3990
+ 2282 print"6t appears to need batteriesQ":goto100
+ 2290 rem
+ 3980 print"&ou see nothing unusualQ":goto100
+ 3990 print"+hatXs not hereQ":goto100
+ 4000 ifv$<>"get"andv$<>"tak"then4500
+ 4001 ifn$<>"mag"then4010
+ 4002 i=7:ifob(7)=-1then4020
+ 4003 ifob(7)<>rthen3990
+ 4004 ifin=>mithen4060
+ 4005 print"(ith a boneRwrenching tugS you pull the"
+ 4006 print"magnet loose from the metal bulkhead"
+ 4007 print"where it had attached itselfQ":goto4052
+ 4010 fori=0tono-1:ifo2$(i)<>n$thennext:print"&ou canXt get thatQ":goto100
+ 4020 ifob(i)<0andob(i)>-3thenprint"&ouXve already got itQ":goto100
+ 4022 ifob(i)=-3and(zf<2orob(1)>-1)then3990                           
+ 4023 ifob(i)=-3then4050
+ 4030 if(ob(i)and127)<>rthen3990
+ 4040 ifob(i)>127thenprint"&ou canXt get thatQ":goto100
+ 4050 ifin=>mithen4060
+ 4051 print"+akenQ"
+ 4052 in=in+1:ifob(i)=-3thenpi=pi-1
+ 4056 ob(i)=-1:goto100
+ 4060 print"&ouXre carrying too muchQ":goto100
+ 4500 ifv$<>"dro"andv$<>"thr"andv$<>"put"then4900
+ 4501 ifn$<>"mag"then4510
+ 4502 i=7:ifob(7)<>-1then4520
+ 4504 print"&ou drop the magnetQ (ith a powerful"
+ 4505 print"leap and a loud clangS it attaches"
+ 4506 print"itself to the nearest metal bulkheadQ":ob(7)=r:in=in-1:goto100
+ 4510 fori=0tono-1:ifo2$(i)<>n$thennext:print"&ou donXt have itQ":goto100
+ 4520 ifob(i)>-1thenprint"&ou donXt have itQ":goto100
+ 4525 ifob(i)=-2thenprint"&ouXll have to remove it firstQ":goto100
+ 4530 ob(i)=r:in=in-1:print";roppedQ":goto100
+ 4900 ifv$<>"inv"andv$<>"i"then5000
+ 4910 print"&ou are carryingE"
+ 4920 ifin=0andob(0)>-1thenprint"  nothing":goto100
+ 4930 fori=0tono-1:ifob(i)>-1then4980
+ 4935 ifob(i)=-3then4980
+ 4940 print"  ";ob$(i);:ifob(i)=-2thenprint" Wbeing wornV";
+ 4950 print
+ 4960 ifi<>1orzf<2then4980
+ 4961 ifpi=0then4980
+ 4962 print"    +he pouch containsE"
+ 4963 forj=0tono-1:ifob(j)=-3thenprint"      ";ob$(j)
+ 4964 next
+ 4980 next:goto100
+ 5000 ifv$<>"pus"andv$<>"pre"then5500
+ 5010 ifn$="but"thenprint"/lease specify a colorQ":goto100
+ 5020 ifn$<>"blu"then5050
+ 5021 ifr<>1then3990
+ 5022 iflf=1thenprint"1othing happensQ":goto100
+ 5025 lf=1:print"> prerecorded voice booms down from an"
+ 5026 print"overhead speakerE":print
+ 5027 printq$"<ongratulationsS lieutenant^ &ou seem"
+ 5028 print"to have come through the cold sleep"
+ 5029 print"with your sanity intactQ 6 donXt need"
+ 5030 print"to tell you that not everyone doesQ"
+ 5031 print"6tXs a rough experienceS but itXs"
+ 5032 print"better than spending ten years staring"
+ 5033 print"at blank wallsS eh?":print
+ 5034 printq$"1ow that youXre almost at your destinaR";
+ 5035 print"tionS itXs safe me for me to tell you"
+ 5036 print"the object of your missionQ ,orry to"
+ 5037 print"keep you in the dark so longS but itXs"
+ 5038 print"an extremely sensitive matterQ":print
+ 5039 printq$"+he 2egaship >rmstrong has run into"
+ 5040 print"some kind of problem en route to the"
+ 5041 print"colony on 6) =arnardQ (eXve been out of"
+ 5042 print"contact with them for a decadeQ (e want"
+ 5043 print"you to find out what happenedS and reR"
+ 5044 print"port back by tachyon beamQ 8ood luck^"q$
+ 5045 goto100
+ 5050 ifn$<>"red"orr<>1then5060
+ 5051 iflf<>0andrf=0then5054
+ 5052 print"+he shipXs computer announcesE"
+ 5053 printq$">ll systems are functionalQ"q$:goto100
+ 5054 print"+he hauntingly human voice of the shipXs";
+ 5055 print"computer booms down from the overhead"
+ 5056 print"speakersE":print:printq$">utomated distress signal being reR"
+ 5057 print"ceived from the 2egaship >rmstrongQ 6s"
+ 5058 print"a rendezvous desired? 6mmediate acknowR"
+ 5059 print"ledgement requested^"q$:af=2:goto100
+ 5060 ifn$<>"gre"orr<>1then5080
+ 5061 ifaf=0thenprint"1othing happensQ":goto100
+ 5062 af=0:print"+he shipXs computer announcesE"
+ 5063 rf=1:printq$"-endezvous procedures have been iniR"
+ 5064 print"tiatedQ"q$:print
+ 5065 print">s you watch through the forward viewR"
+ 5066 print"screenS the stars seem to change posiR"
+ 5067 print"tion around youQ > distant point of"
+ 5068 print"light swells until it becomes a starR"
+ 5069 print"shipQ >s it comes closerS you recognize"
+ 5070 print"the mindboggling bulk of an immense"
+ 5071 print"megashipS a starship as large as a"
+ 5072 print"small planetQ 0n its sideS in large red"
+ 5073 print"lettersS are the words 8<< >-2,+-018Q"
+ 5074 print"+he 8anymede finally comes to a halt"
+ 5075 print"directly beneath the >rmstrongXs bellyQ":goto100
+ 5080 ifn$<>"ora"then5100
+ 5081 ifr<>1then3990
+ 5082 ifdf=1then5094
+ 5083 ifrf=1then5087
+ 5084 print"+he docking machinery whines uselesslyS"
+ 5085 print"since there is nothing in the vicinity"
+ 5086 print"with which it can dockQ":goto100
+ 5087 df=1:print"+he 8anymede rises until it is touching"
+ 5088 print"the >rmstrongQ > loud grinding noise"
+ 5089 print"informs you that the airlocks are now"
+ 5090 print"connected and the ships are dockedQ":goto100
+ 5094 df=0:print"+he 8anymede and >rmstrong disconnect"
+ 5095 print"airlocks and undockQ +he 8anymede floats";
+ 5096 print"downward until about fifty meters of"
+ 5097 print"space separate it from the >rmstrongQ":goto100
+ 5100 ifn$<>"yel"orr<>1then5200
+ 5102 print"+here is a crackle from the overhead"
+ 5103 print"speakerS then you hear the voice of the"
+ 5104 print"communications officer back at base"
+ 5105 print"headquartersS transmitted to you via"
+ 5106 print"tachyon beamQ &ou tell her what has"
+ 5107 print"happenedQ ,he repliesE":print
+ 5110 onsf+1goto5120,5130,5140,5150:goto100
+ 5120 printq$"/lease get back in contact after"
+ 5121 print"youXve made some progress in your":print"missionQ"q$:goto100
+ 5130 printq$"2y 8odS thatXs horrible^ 9ind out what"
+ 5131 print"happened to the crew and report back"
+ 5132 print"immediately^"q$:goto100
+ 5140 printq$"(hat an astonishing story^ &ou must"
+ 5141 print"save the shipXs passengers from this"
+ 5142 print"malevolent forceS before it can escape"
+ 5143 print"againQ 6t will be two years before we"
+ 5144 print"can have another ship in your vicinity^"
+ 5145 print"-eport back when youXre done^"q$:goto100
+ 5150 printq$"<ongratulations^ &ouXve succeeded admiR";
+ 5151 print"rably^ +he new crew will arrive in two"
+ 5152 print"yearsQ <ome on home^"q$:print
+ 5156 print",milingS you return to the cold sleep"
+ 5157 print"booth and sink into its depthsQ &our"
+ 5158 print"fear of the coming nightmares is offset"
+ 5160 print"by thoughts of the heroXs welcome that"
+ 5161 print"awaits you when you return home^ =ut"
+ 5162 print"even as the cold sleep beginsS you see"
+ 5163 print"the image in the back of your mind of a"
+ 5165 print"malevolent evil forceS ready to spring"
+ 5166 print"on you as soon as you surrender to the"
+ 5167 print"oncoming sleepQQQQ":print:print"+7: :1;":goto7020
+ 5200 ifn$<>"yel"orr<>13then5210
+ 5201 ifpf=3thenprint"1othing happensQ":goto100
+ 5203 pf=pf+1:ifpf<3thenprint"1othing happensQ":goto100
+ 5204 print"&ou hear a hissing sound from the"
+ 5205 print"ventilation systemQ >fter a few moments"
+ 5206 print"a sign on the control panel indicates"
+ 5207 print"that the air is pure enough to breatheQ":goto100
+ 5210 ifn$<>"bla"orr<>20orcf<2then5240
+ 5211 ifef=1thenprint"1othing happensQ":goto100
+ 5213 print"+here is a rumble from a speaker set"
+ 5214 print"into the science officerXs consoleS":print"then a voice speaksE":print
+ 5215 printq$"+his is the >rmstrongXs computerized"
+ 5216 print"emergency systemQ ,ince the crew of the"
+ 5217 print">rmstrong is now dead and all of the"
+ 5218 print"passengers remain in cold sleepS it is"
+ 5219 print"assumed that you are an outsider resR"
+ 5220 print"ponding to the distress signalQ 7ere"
+ 5221 print"are the details of the current emergency";
+ 5222 print"situationE":print:printq$">n invisibleS malevolent force has enR"
+ 5223 print"tered the >rmstrong during a routine"
+ 5224 print":)>Q >ll crew members are deceasedQ"
+ 5225 print"0ver the course of ten yearsS 6 have"
+ 5226 print"maneuvered the invading entity into the"
+ 5227 print"auxiliary storage areaS behind the main"
+ 5228 print"storage roomS where it is now impriR"
+ 5229 print"sonedS though perhaps not for longQ 6f"
+ 5230 print"you wish me to unlock the door to this"
+ 5231 print"roomS please acknowledge immediately^"q$:af=2:sf=2:goto100
+ 5240 ifn$<>"whi"orr<>20orcf<2then5250
+ 5241 ifaf=0thenprint"1othing happensQ":goto100
+ 5242 af=0:print"+he emergency computer announcesE"
+ 5243 ef=1:printq$;";oor to the auxiliary storage room"
+ 5244 print"is now unlockedQ";q$:goto100
+ 5250 rem
+ 5490 print"&ou canXt push thatQ":goto100
+ 5500 ifv$<>"ope"then6000
+ 5510 ifn$<>"doo"or(r<>4andr<>5)then5520
+ 5512 ifr=4orr=5thenprint"/lease specify which doorQ":goto100
+ 5519 print"+hereXs no door hereQ":goto100
+ 5520 ifn$<>"inn"then5600
+ 5521 ifr<>4andr<>5thenprint"+hereXs no inner door hereQ":goto100
+ 5522 ifid(r-4)=0thenprint"6tXs already openQ":goto100
+ 5523 ifod(r-4)=0thenprint"+he outer door must be closed firstQ":goto100
+ 5524 id(r-4)=0:print"+he inner door is now openQ"
+ 5526 ifr=4thenma(4,5)=3:goto100
+ 5527 ma(5,4)=6:goto100
+ 5600 ifn$<>"out"then5700
+ 5601 ifr<>4andr<>5thenprint"+hereXs no outer door hereQ":goto100
+ 5602 ifod(r-4)=0thenprint"6tXs already openQ":goto100
+ 5603 ifid(r-4)=0thenprint"+he inner door must be closed firstQ":goto100
+ 5604 od(r-4)=0:print"+he outer door is now openQ"
+ 5606 ifr=4anddf=1thenma(4,4)=5
+ 5607 ifr=5thenma(5,5)=4
+ 5608 ifr=5or(df=1andob(0)=-2)thengoto100
+ 5609 print:ifdf<>0then5650
+ 5610 ifmf=1then5670
+ 5612 ifob(0)<>-2then5625
+ 5613 print"> violent gust of air pulls you from"
+ 5614 print"the airlock into the void of spaceQ +he"
+ 5615 print",tarflyer 8anymede recedes rapidly"
+ 5616 print"into the distanceS dwindling until it"
+ 5617 print"is no more than a point of light among"
+ 5618 print"the starsQ":print:print"&our spacesuit has sufficient oxygen"
+ 5619 print"to sustain you for HM hours adrift in"
+ 5620 print"spaceS cold comfort considering that"
+ 5621 print"your chances of rescue are effectively":print"nilQ":ifrf=0then7020
+ 5622 iffr=4then5660
+ 5623 print:print"/erhaps you should have finished docking";
+ 5624 print"with the >rmstrongQQQQ":goto7020
+ 5625 print"> violent gust of air pulls you from"
+ 5626 print"the airlock into the void of spaceQ"
+ 5627 print"&ou are briefly aware of the ,tarflyer"
+ 5628 print"8anymede receding into the distanceS"
+ 5629 print"then you lose consciousnessQQQforeverQ":ifrf=0then7020
+ 5630 iffr=4then5660
+ 5631 goto5623
+ 5650 ifpf=3thenreturn
+ 5651 print";im light floods in from the airlock of"
+ 5652 print"the >rmstrong RR and a cloud of noxious"
+ 5653 print"fumes floods in as wellQ &ou begin to"
+ 5654 print"choke and try to close the doorS but"
+ 5655 print"itXs too lateQ &ou are losing conR"
+ 5656 print"sciousnessQ &our final thought is that"
+ 5657 print"you should have worn the spacesuitQ 6t"
+ 5658 print"might have saved your lifeQQQQ":goto7020
+ 5660 print:print"9or what itXs worthS the malevolent"
+ 5661 print"force is also pulled into the depths of"
+ 5662 print"space with youS so that it can no longer";
+ 5663 print"menace the passengers on board the >rmR"
+ 5664 print"strongQ &ou have succeeded in your"
+ 5667 print"missionQQQbut have lost your lifeQ":goto7020
+ 5670 print">s the outer door opensS air bursts"
+ 5671 print"explosively into the vacuum of spaceS"
+ 5672 print"but you are held fast within the airR"
+ 5673 print"lock by the strong grip of the bar magR"
+ 5674 print"net against the metallized glove of your";
+ 5675 print"spacesuitQ > screaming sound inside"
+ 5676 print"your head tells you that the malevolent"
+ 5677 print"force has been yanked back into the"
+ 5678 print"vacuum of space from which it cameS and"
+ 5679 print"can no longer menace the crew members"
+ 5680 print"of the >rmstrongQ &ou rejoice inwardly^"
+ 5681 print"&ou have accomplished your assigned"
+ 5682 print"mission and now have only to report"
+ 5683 print"back to headquarters^":fr=0:sf=3:goto100
+ 5700 ifn$<>"pou"then5800
+ 5705 ifob(1)<>-1thenprint"&ou donXt have the pouchQ":goto100
+ 5710 ifzf=0thenprint"&ou canXtQ +he zipperXs stuckQ":goto100           
+ 5800 ifn$<>"pan"orr<>20then5820
+ 5801 ifcf=0thenprint"&ou canXt open thatQ 6tXs lockedQ":goto100
+ 5802 ifcf>1then5810
+ 5803 print"&ou canXtQ +he panelXs unlockedS but"
+ 5804 print"itXs jammed shutS probably from the"
+ 5805 print"force of the science officerXs body"
+ 5806 print"falling against itQ":goto100
+ 5810 print"+he panel is already openQ";:goto100
+ 5820 ifn$<>"doo"orr<>11then5830
+ 5821 ifef=0thenprint"&ou canXtQ 6tXs lockedQ":goto100
+ 5822 print"0kayQ 6tXs openQ":as=1:ma(11,1)=21:ma(21,0)=11:goto100
+ 5830 ifn$<>"box"then5840
+ 5831 ifob(6)<>-1andob(6)<>rthen3990
+ 5832 ifbf=0thenprint"&ou canXtQ 6tXs lockedQ":goto100
+ 5833 ifbf=2thenprint"6tXs already openQ":goto100
+ 5834 print"0kayQ 6tXs openQQQand something fell":print"outQ":bf=2:ob(5)=r:goto100
+ 5840 rem
+ 5990 print"&ou canXt open thatQ":goto100
+ 6000 ifv$<>"clo"then6500
+ 6010 ifn$<>"doo"then6020
+ 6012 ifr=4orr=5thenprint"/lease specify which doorQ":goto100
+ 6019 print"+hereXs no door hereQ":goto100
+ 6020 ifn$<>"inn"then6100
+ 6021 ifr<>4andr<>5thenprint"+hereXs no inner door hereQ":goto100
+ 6022 ifid(r-4)=1thenprint"6tXs already closedQ":goto100
+ 6024 id(r-4)=1:print"+he inner door is now closedQ"
+ 6025 ifr=4thenma(4,5)=0
+ 6026 ifr=5thenma(5,4)=0
+ 6027 goto100
+ 6064 print"tiatedQ";chr$(34):print
+ 6100 ifn$<>"out"then6200
+ 6101 ifr<>4andr<>5thenprint"+hereXs no outer door hereQ":goto100
+ 6102 ifod(r-4)=1thenprint"6tXs already closedQ":goto100
+ 6104 od(r-4)=1:print"+he outer door is now closedQ"
+ 6106 ifr=4thenma(4,4)=0
+ 6107 ifr=5thenma(5,5)=0
+ 6108 goto100
+ 6200 rem
+ 6490 print"&ou canXt close thatQ":goto100
+ 6500 ifv$<>"wea"then7000
+ 6510 ifn$<>"spa"then6600
+ 6511 ifob(0)=-2thenprint"&ouXre already wearing itQ":goto100
+ 6512 ifob(0)<>randob(0)<>-1thenprint"+hatXs not hereQ":goto100
+ 6515 ob(0)=-2:in=in-1:print"+he spacesuit is now being wornQ":goto100
+ 6600 rem
+ 6990 print"&ou canXt wear thatQ":goto100
+ 7000 ifv$<>"qui"then7100
+ 7010 poke806,202:poke807,241:print"Quit? Are you sure (y/n)?"
+ 7014 getx$:ifx$=""then7014
+ 7015 ifx$="n"thenprint"Okay.":poke806,60:poke807,3:goto100
+ 7016 ifx$<>"y"then7014
+ 7020 poke806,202:poke807,241:print:print"Would you like to play again (y/n)";
+ 7022 getx$:ifx$=""then7022
+ 7024 ifx$="n"thenprint"{clr}";:end
+ 7026 ifx$<>"y"then7022
+ 7030 run
+ 7100 ifv$<>"rem"then7200
+ 7101 ifn$<>"spa"then7120
+ 7102 ifob(0)<>-2thenprint"&ouXre not wearing itQ":goto100
+ 7103 ifin=>mithen4060
+ 7104 in=in+1:ob(0)=-1:print"&ou are no longer wearing the spacesuitQ";
+ 7105 if(r>4or(r=4andod(0)=0))andpf<3then7107
+ 7106 goto100
+ 7107 print:print"QQQbut you should have left it on^"
+ 7108 print"1oxious fumes inside the >rmstrong"
+ 7109 print"asphyxiate you within seconds^":goto7020
+ 7120 ifn$<>"cro"then7140
+ 7121 if(ob(2)<>-3)or(ob(1)<>-1orzf<>2)thenprint"9rom what?":goto100
+ 7122 ifin=>mithenprint"&ouXre carrying too muchQ":goto100
+ 7123 ob(2)=-1:pi=pi-1:in=in+1:print"0kayQ":goto100
+ 7140 rem
+ 7190 print"&ou canXt remove thatQ":goto100
+ 7200 ifv$="bri"thenprint"=rief descriptionsQ":vf=0:goto100
+ 7210 ifv$="sup"thenprint",uperbrief descriptionsQ":vf=-1:goto100
+ 7220 ifv$="ver"thenprint"2aximum verbosityQ":vf=1:goto100
+ 7300 ifv$<>"cut"andv$<>"sla"andv$<>"sli"then7500
+ 7310 ifn$<>"pou"then7490
+ 7312 ifob(1)<>-1thenprint"&ou donXt have the pouchQ":goto100
+ 7315 ifob(3)<>-1thenprint"(ith what?":goto100
+ 7317 ifzf=2thenprint"6tXs already been cutS thank youQ":goto100
+ 7320 print"&ou cut open the pouch with the knifeQ":zf=2:goto100
+ 7490 print"&ou canXt cut thatQ":goto100
+ 7500 ifv$<>"pry"then8000
+ 7501 ifn$<>"pan"then7600
+ 7502 ifr<>20then3990
+ 7503 ifob(2)=-1then7506
+ 7504 ifob(3)<>-1thenprint"(ith what?":goto100
+ 7505 print"&ouXll need something stronger than a":print"knifeQ":goto100
+ 7506 ifcf>0then7510
+ 7507 print"&ou attempt to pry the locked panel"
+ 7508 print"with the crowbarS but are unsuccessfulQ":goto100
+ 7510 cf=2:print"&ou pry open the panel with the crowbarQ";:goto100
+ 7600 rem
+ 7990 print"&ou canXt pry thatQ":goto100
+ 8000 ifv$<>"unl"then9000
+ 8010 ifn$<>"pan"then8100
+ 8020 ifr<>20then3990
+ 8025 ifob(4)<>-1thenprint"&ou donXt have any keysQ":goto100
+ 8030 ifcf>0thenprint"6tXs already unlockedQ":goto100
+ 8035 print"0kayQ 6tXs unlockedQ":cf=1:goto100
+ 8100 ifn$<>"doo"orr<>11then8200
+ 8105 ifef=1thenprint"6tXs already unlockedQ":goto100
+ 8110 print"+he door is locked electronically and"
+ 8111 print"can only be unlocked by order of the"
+ 8112 print"shipXs computer systemQ":goto100
+ 8200 ifn$<>"box"then8300
+ 8210 ifob(6)<>-1andob(6)<>rthen3990
+ 8220 ifbf>0thenprint"6tXs already unlockedQ":goto100
+ 8225 ifob(4)<>-1thenprint"&ou donXt have any keysQ":goto100
+ 8230 print"0kayQ 6tXs unlockedQ":bf=1:goto100
+ 8300 rem
+ 8990 print"&ou canXt unlock thatQ":goto100
+ 9000 ifv$<>"twi"andv$<>"rot"then9500
+ 9005 ifob(5)<>-1and(ob(5)and127)<>rthen3990
+ 9007 ifob(5)>127thenprint"1ot bloody likelyQ":goto100
+ 9010 ifn$<>"dis"andn$<>"cyl"then9100
+ 9020 ifsd<>-1thenprint"&ouXve already primed the disruptorQ":goto100
+ 9025 sd=4:print"&ou twist the disruptor until it clicksQ";:goto100
+ 9026 y.
+ 9490 print"&ou canXt twist thatQ":goto100
+ 9500 ifv$<>"wai"then9600
+ 9510 print"0ne minute passesQQQQ":goto100
+ 9600 ifv$<>"dia"then9800
+ 9610 ifhp<3then9620
+ 9611 print"&ouXre in fine healthQQQfor the time":print"beingS anywayQ":goto100
+ 9620 ifhp<2then9630
+ 9621 print"+he shock to your nervous system has"
+ 9622 print"left you in ragged shapeQ &ou are"
+ 9623 print"wobblyS disorientedS and slightly"
+ 9624 print"nauseousQ &ou should avoid additional"
+ 9625 print"shocks of this natureQ":goto100
+ 9630 print"&ou are in critical conditionQ 0ne more"
+ 9631 print"shock like that last one and your starR"
+ 9632 print"flying days will come to an abrupt haltQ";:goto100
+ 9800 ifv$<>"tou"then10000
+ 9810 ifn$<>"mag"thenprint"0kayQ &ouXve touched itQ":goto100
+ 9820 ifob(7)<>-1andob(7)<>rthen3990
+ 9825 ifob(7)<>-1orob(0)<>-2then9830
+ 9826 print"6t clings to the metallic fingers of":print"your spacesuit gloveQ":goto100
+ 9830 ifob(7)=-1orob(0)>-2thenprint"6t feels like a magnetQ":goto100
+ 9840 print"+he fingers of your spacesuit attach"
+ 9841 print"themselves tightly to the magnetQ ,ince"
+ 9842 print"you are UinU the spacesuitS you are"
+ 9843 print"temporarily immobilizedQ":mf=1:goto100
+ 10000 ifv$<>"sav"then10500
+ 10002 poke806,202:poke807,241:print"{clr}Save game. Are you sure (Y or N)?"
+ 10003 getx$:ifx$=""then10003
+ 10004 ifx$="n"thenprint"Okay.":poke806,60:poke807,3:goto500
+ 10005 ifx$<>"y"then10002
+ 10010 print"Position 1-9 ( Default is";p"):";
+ 10011 getx$:ifx$=""then10011
+ 10012 ifasc(x$)=13thenprintp:goto10015
+ 10013 ifval(x$)<1orval(x$)>9then10011
+ 10014 printval(x$):p=val(x$)
+ 10015 print"Drive 8 or 9 ( Default is";d"):";
+ 10016 getx$:ifx$=""then10016
+ 10017 ifasc(x$)=13thenprintd:goto10020
+ 10018 ifval(x$)<8orval(x$)>9then10016
+ 10019 print"{left}";val(x$):d=val(x$)
+ 10020 print:print"Saving position";p;"..."
+ 10029 open15,d,15,"s0:starflight.sav"+chr$(p+48):close15
+ 10030 open8,d,8,"starflight.sav"+chr$(p+48)+",s,w"
+ 10040 print#8,id(0)c$od(0)c$id(1)c$od(1)c$in;c$mi;c$r;c$vf;c$lf;c$af;c$rf;c$;
+ 10050 print#8,df;c$sf;c$pi;c$zf;c$fr;c$h;c$pf;c$cf;c$ef;c$sd;c$as;c$bf;c$hp;c$;
+ 10060 print#8,ff;c$mf;c$;:fori=0tono-1:print#8,ob(i)c$;:next:print#8,ob$(5)c$;
+ 10070 print#8,ma(4,4)c$ma(4,5)c$ma(5,4)c$ma(5,5)c$ma(17,5)c$ma(21,0)c$;
+ 10080 print#8,ma(11,2)c$;:fori=1tonr:print#8,rf(i)c$;:next
+ 10090 ifst=0then10200
+ 10100 open15,d,15:input#15,a1$,b1$,c1$,d1$:close15
+ 10110 print"{clr}Disk Error #";a1$": "b1$:print"Save aborted.":goto10210
+ 10200 print"{clr}Done."
+ 10210 poke806,60:poke807,3:close8:goto100
+ 10500 ifv$<>"res"then11000
+ 10502 poke806,202:poke807,241:print"{clr}Restore game. Are you sure (Y or N)?"
+ 10503 getx$:ifx$=""then10503
+ 10504 ifx$="n"thenprint"Okay.":poke806,60:poke807,3:goto500
+ 10505 ifx$<>"Y"andx$<>"y"then10502
+ 10510 print"Position 1-9 ( Default is";p"):";
+ 10511 getx$:ifx$=""then10511
+ 10512 ifasc(x$)=13thenprintp:goto10515
+ 10513 ifval(x$)<1orval(x$)>9then10511
+ 10514 printval(x$):p=val(x$)
+ 10515 print"Drive 8 or 9 ( Default is";d"):";
+ 10516 getx$:ifx$=""then10516
+ 10517 ifasc(x$)=13thenprintd:goto10520
+ 10518 ifval(x$)<8orval(x$)>9then10516
+ 10519 print"{left}";val(x$):d=val(x$)
+ 10520 print:print"Restoring position";p;"..."
+ 10530 open8,d,8,"starflight.sav"+chr$(p+48)+",s,r"
+ 10540 input#8,id(0),od(0),id(1),od(1),in,mi,r,vf,lf,af,rf
+ 10550 input#8,df,sf,pi,zf,fr,h,pf,cf,ef,sd,as,bf,hp
+ 10560 input#8,ff,mf:fori=0tono-1:input#8,ob(i):next:input#8,ob$(5)
+ 10570 input#8,ma(4,4),ma(4,5),ma(5,4),ma(5,5),ma(17,5),ma(21,0)
+ 10580 input#8,ma(11,2):fori=1tonr:input#8,rf(i):next
+ 10590 if(st and191)=0then10700
+ 10600 open15,d,15:input#15,a1$,b1$,c1$,d1$:close15
+ 10610 print"{clr}Disk Error #";a1$": "b1$:print"Restore aborted.":goto10710
+ 10700 print"{clr}Done."
+ 10710 poke806,60:poke807,3:close8:goto100
+ 11000 ifv$<>"hit"andv$<>"kic"andv$<>"kil"andv$<>"sma"then11100
+ 11010 print"9eeling violent todayS are we?":goto100
+ 11100 ifv$<>"fuc"andv$<>"shi"then11200
+ 11110 print"/lease^ 1ot here^":goto100
+ 11200 rem
+ 29980 print"6 donXt know how to "tv$;:ifn$<>""thenprint" something";
+ 29990 print"Q":goto100
+ 30000 if(rf(r)=1andvf=0)orvf=-1then30050
+ 30010 rf(r)=1:onrgoto30100,30200,30300,30400,30500,30600,30700,30800,30900,31000
+ 30011 onr-10goto31100,31200,31300,31400,31500,31600,31700,31800,31900,32000
+ 30012 onr-20goto32100,32200
+ 30050 rf(r)=1:onrgoto30150,30250,30350,30450,30550,30650,30750,30850,30950,31050
+ 30051 onr-10goto31150,31250,31350,31450,31550,31650,31750,31850,31950,32050
+ 30052 onr-20goto32150,32250
+ 30100 print"&ou are in the pilotXs cabin of the"
+ 30101 print",tarflyer 8anymedeQ 6n front of you"
+ 30102 print"is a console covered with instrumentsS"
+ 30103 print"gaugesS and controlsQ +o aft is the"
+ 30104 print"cold sleep chamberQ":goto30160
+ 30150 print"/ilotXs <abin"
+ 30160 iflf=0thenprint:print"> light is flashing on the consoleQ"
+ 30170 return
+ 30200 print"&ou are in the cold sleep chamberQ 6n"
+ 30201 print"front of you is the coffinRlike susR"
+ 30202 print"pended animation booth in which you"
+ 30203 print"recently awoke from your decadeRlong"
+ 30204 print"napQ +o starboard is an open doorQ"
+ 30205 print"9orward is the door to the main cabinQ":return
+ 30250 print"<old ,leep <hamber":return
+ 30300 print"&ou are in the storage cabin of the"
+ 30301 print"8anymedeQ +he wall is lined with metal"
+ 30302 print"hooks on which have been anchored small"
+ 30303 print"objectsS so that they will not float"
+ 30304 print"about in the absence of gravityQ +here"
+ 30305 print"is an entrance to the airlock set in"
+ 30306 print"the ceiling and a door to port leading"
+ 30307 print"back to the cold sleep chamberQ":return
+ 30350 print",torage <abin":return
+ 30400 print"&ou are in the 8anymedeXs airlockS with"
+ 30401 print"the inner door below you and the outer"
+ 30402 print"door above youQ ";
+ 30405 ifid(r-4)=0thenprint"+he inner door is open":print"and ";:goto30410
+ 30406 print"+he inner door is closed";:print"and ";
+ 30410 ifod(r-4)=0thenprint"the outer door is openQ":goto100
+ 30420 print"the outer door is closedQ":return
+ 30450 print"8anymedeXs >irlock":return
+ 30500 print"&ou are in the >rmstrongXs airlockS with";
+ 30501 print"the inner door above you and the outer"
+ 30502 print"door below youQ ";:goto30405
+ 30550 print">rmstrongXs >irlock":return
+ 30600 ifsf<1thensf=1
+ 30601 print"&ou are in the transportation room of"
+ 30602 print"the >rmstrongQ +o your horrorS you see"
+ 30603 print"a human skeleton dressed in a petty"
+ 30604 print"officerXs uniform seated to one side of"
+ 30605 print"the entrancewayS its head hunched over"
+ 30606 print"a computer terminalQ 9orward is a doorR"
+ 30607 print"wayQ =elow is the airlockQ":return
+ 30650 ifsf<1thensf=1
+ 30651 print"+ransportation -oom":return
+ 30700 print"&ou are in a long hallway running from"
+ 30701 print"port to starboardQ +o aft is a door"
+ 30702 print"labeled +->1,/0-+>+601 -002Q":return
+ 30750 print"0utside +ransportation -oomQ":return
+ 30800 print"&ou are in a long hallway running from"
+ 30801 print"port to starboardQ 9orward is a door"
+ 30802 print"labeled />,,:18:- )>*3+Q":return
+ 30850 print"0utside /assenger )aultQ":return
+ 30900 print"&ou are in the passenger vaultS a chamR"
+ 30901 print"ber so immense that the forward side"
+ 30902 print"of it is lost in dark mistsQ 3ined up"
+ 30903 print"to port and starboard are tier after"
+ 30904 print"tier of cold sleep boothsS containing"
+ 30905 print"the hibernating bodies of the >rmR"
+ 30906 print"strongXs passengersQ +o aft is a doorQ":return
+ 30950 print"/assenger )aultQ":return
+ 31000 print"&ou are at the starboard end of a long"
+ 31001 print"hallwayQ +o aft is a door labeled"
+ 31002 print",+0->8:Q":return
+ 31050 print"0utside ,torage -oomQ":return
+ 31100 print"&ou are in the >rmstrongXs main storage"
+ 31101 print"roomQ +he exit is forwardQ ";:ifas=0thenprint"> closed":goto31103
+ 31102 print">n open"
+ 31103 print"door is aftQ":return
+ 31150 print",torage -oomQ":return
+ 31200 print"&ou are in a long hallway running from"
+ 31201 print"port to starboardQ >ft is a door"
+ 31202 print"labeled ,+>6-,7>9+Q":return
+ 31250 print"0utside ,tairshaftQ":return
+ 31300 print"&ou are in the >rmstrongXs maintenance"
+ 31301 print"roomQ >nother uniformed skeleton is"
+ 31302 print"sprawled over a console covered with"
+ 31303 print"gauges and instrumentsQ +here is a"
+ 31304 print"a stairshaft leading upQ":return
+ 31350 print"2aintenance -oomQ":return
+ 31400 print"&ou are at the corner of two hallwaysS"
+ 31401 print"one heading forwardS the other to"
+ 31402 print"starboardQ":return
+ 31450 print"<orner of +wo 7allwaysQ":return
+ 31500 print"&ou are in a long hallway running from"
+ 31501 print"fore to aftQ":return
+ 31550 print"3ong 7allwayQ":return
+ 31600 print"&ou are in a long hallway running from"
+ 31601 print"fore to aftQ +o starboard is a door"
+ 31602 print"labeled =-6;8:Q":return
+ 31650 print"0utside =ridgeQ":return
+ 31700 print"&ou are in a winding stairshaft leading"
+ 31701 print"downward to a lower level of the shipQ"
+ 31702 print"+here is a door to forwardQ":return
+ 31750 print"(inding ,tairshaftQ":return
+ 31800 print"&ou are on the port side of the >rmR"
+ 31801 print"strongXs bridgeQ 6n front of you is a"
+ 31802 print"scene of unparalleled carnageQ 3ong"
+ 31803 print"decayed skeletons in varicolored uniR"
+ 31804 print"forms are sprawled to all sidesS some"
+ 31805 print "seated in contoured plastic chairsS some";
+ 31806 print"collapsed on the floor in grotesque"
+ 31809 print"attitudesQ +here is a door to portQ +he"
+ 31810 print"bridge continues to starboardQ":return
+ 31850 print"/ort ,ide of =ridgeQ":return
+ 31900 print"&ou are in the center of the >rmstrongXs";
+ 31901 print"bridgeQ &ou see a skeleton dressed in a"
+ 31902 print"captainXs uniformS seated in a large"
+ 31903 print"chairS its hand perched over the naviR"
+ 31904 print"gational override controlsQ":return
+ 31950 print"<enter of the =ridgeQ":return
+ 32000 print"&ou are on the starboard side of the"
+ 32001 print">rmstrongXs bridgeQ > skeleton in a"
+ 32002 print"science officerXs uniform is sprawled"
+ 32003 print"next to a plastic panel set into the"
+ 32004 print"wallQ";:ifcf<2thenprint:return
+ 32005 print" +he panel is openS revealing a"
+ 32006 print"computer video screenS a black button"
+ 32007 print"and a white buttonQ":return
+ 32050 print",tarboard ,ide of the =ridgeQ":return
+ 32100 print"&ou are in the >rmstrongXs auxiliary"
+ 32101 print"storage roomQ *nopened boxes are"
+ 32102 print"anchored to the walls with baling wireQ":return
+ 32150 print">uxiliary ,torage -oomQ":return
+ 32200 print"&ou are in the middle of a vast assortR"
+ 32201 print"ment of debrisQ &ou can go no farther"
+ 32202 print"forwardQ":return
+ 32250 print"6n the 2iddle of ;ebris":return
+ 49000 f=0:fori=0tono-1:if(ob(i)and127)=rthenprint"+here is ";ob$(i);" hereQ":f=1
+ 49010 next:iff=1thenprint
+ 49020 return
+ 49100 iffr<>rthenreturn
+ 49105 print"&ou are aware of a powerfulS invisible"
+ 49110 print"force in the room with youQ":print:return
+ 49200 data 76 , 66 , 3 , 76 , 91 , 3 , 133 , 251 , 201 , 13
+ 49210 data 240 , 6 , 165 , 154 , 201 , 3 , 240 , 5 , 165 , 251
+ 49220 data 76 , 202 , 241 , 169 , 255 , 56 , 229 , 251 , 76 , 202
+ 49230 data 241 , 169 , 193 , 32 , 210 , 255 , 162 , 0 , 32 , 207
+ 49240 data 255 , 201 , 32 , 240 , 249 , 76 , 111 , 3 , 32 , 207
+ 49250 data 255 , 201 , 13 , 240 , 14 , 133 , 251 , 169 , 255 , 56
+ 49260 data 229 , 251 , 157 , 145 , 3 , 232 , 76 , 108 , 3 , 138
+ 49270 data 160 , 2 , 145 , 45 , 200 , 169 , 145 , 145 , 45 , 200
+ 49280 data 169 , 3 , 145 , 45 , 96
+ 50000 fori=0tono-1:readob$(i),o2$(i),ob(i):next:return
+ 50100 data "a bulky spacesuit","spa",3
+ 50110 data "a plastic pouch","pou",3
+ 50120 data"a crowbar","cro",-3
+ 50130 data "a small knife","kni",0
+ 50140 data "a set of keys","key",0
+ 50150 data "a sonic disruptor","dis",0
+ 50160 data "a wooden box","box",11
+ 50170 data "a powerful bar magnet","mag",22
+ 50180 data "a twoRway radio","rad",3
+ 55000 fori=1tonr:ford=0to5:readma(i,d):next:next:return
+ 55100 data 0,2,0,0,0,0
+ 55110 data 1,0,3,0,0,0
+ 55120 data 0,0,0,2,4,0
+ 55130 data0,0,0,0,0,3
+ 55140 data 0,0,0,0,0,4
+ 55150 data 7,0,0,0,0,5
+ 55160 data 0,6,136,12,0,0
+ 55170 data 9,0,10,135,0,0
+ 55180 data 128,8,0,0,0,0
+ 55190 data 0,11,0,8,0,0
+ 55200 data 10,0,0,0,0,0
+ 55210 data 0,17,7,14,0,0
+ 55220 data0,0,0,0,17,0
+ 55230 data15,0,12,0,0,0
+ 55240 data 16,14,0,0,0,0
+ 55250 data 140,15,18,0,0,0
+ 55260 data 12,0,0,0,0,129
+ 55270 data 0,0,19,16,0,0
+ 55280 data 0,0,20,18,0,0
+ 55290 data 0,0,0,19,0,0
+ 55300 data 0,0,0,0,0,0
+ 55310 data 131,16,0,0,0,0
+ 60000 print"L   +hey told you that star flight would"
+ 60010 print"be difficultQ +hey told you and you"
+ 60020 print"believed themQQQsort ofQ":print
+ 60030 print"   (hat they hadnXt told you was how"
+ 60040 print"grueling cold sleep could beS how the"
+ 60050 print"months and years of your flight would be";
+ 60060 print"filled with endless nightmaresS countR"
+ 60070 print"less replays of every terrible thing"
+ 60080 print"that had happened to you in a lifetime"
+ 60090 print"of terrible thingsQ (hen the instrucR"
+ 60100 print"tions finally arrived from the shipXs"
+ 60110 print"computer telling the cold sleep"
+ 60120 print"machinery to revive you for the final"
+ 60130 print"phase of your flightS you were gratefulQ"
+ 60140 print"   (hat you didnXt realizeS even as you"
+ 60150 print"stumbled groggily from the narrow sleep"
+ 60160 print"chamber into the pilotXs cabin of the"
+ 60170 print",tarflyer 8anymedeS was that the most"
+ 60180 print"nightmarish part of your mission was"
+ 60190 print"yet to comeQQQand that you would face"
+ 60200 print"it fully awakeQ"
+ 60210 print:print"            C/-:,, -:+*-1A";
+ 60220 geta$:ifa$<>chr$(13)then60220
+ 60230 print"L,+>-93687+E > <osmic >dventure"
+ 60240 print"(ritten Y programmed by <hris 3ampton":print:return
+ 63000 fori=0to84:reada:poke828+i,a:next:poke806,60:poke807,3:return
+

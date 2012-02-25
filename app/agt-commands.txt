@@ -1,0 +1,146 @@
+conditions
+
+player
+x	atlocation
+-	atlocationGT
+-	atlocationLT
+	firstvisittoroom
+x	iscarryingsomething
+-	iscarryingnothing
+	iscarryingtreasure
+x	iswearingsomething
+-	iswearingnothing
+	loadweightequals/gt/lt
+	newlife
+
+item
+x	present
+x	iswearing
+x	iscarrying
+-	isnowhere
+x	issomewhere
+x	inroom
+x	islocated
+x	together
+-	ison
+-	isoff
+-	isopen
+-	isclosed
+-	islocked
+-	isunlocked
+-	isedible
+-	isdrinkable
+-	ispoisonous
+x	ismovable
+	isgroupmember
+x	somethinginside
+
+misc
+-	namepresent
+-	nameisnumber
+-	objectpresent
+-	objectiscreature
+-	objectisnumber
+-	lightpresent
+-	roomneedslight
+	flagon
+	flagoff
+	scorequals/gt/lt
+	numberequals/gt/lt
+	answeriscorrect
+	answeriswrong
+x	turnsequals/gt/lt
+-	counterequals/gt/lt
+x	variableequals/gt/lt
+x	comparevariables
+	variablechance
+x	chance
+	promptforyes
+	promptforno
+	verbisdirection
+
+
+actions
+
+player
+x	gotoroom
+	gotorandomroom
+x	getit
+x	wearit
+x	dropit
+x	removeit
+-	getnoun
+-	wearnoun
+-	dropnoun
+-	removenoun
+	dropeverything
+	removeeverything
+	killplayer
+
+item/noun/location
+-	putincurrentroom
+-	putnounincurrentroom
+x	relocateall
+x	sendtoroom
+-	sendnountoroom
+-	sendalltoroom
+	sendtreasurestoroom
+x	destroy
+-	destroynoun
+x	swaplocations
+x	sendtoitem
+-	sendnountoitem
+-	openit
+-	closeit
+-	lockit
+-	unlockit
+	addtogroup
+	removefromgroup
+	movethegroup
+
+misc
+	showscore
+	plusscore
+	minusscore
+x	showinventory
+x	showcontents
+x	waitforreturn
+-	timepasses
+	delay
+	clearscreen
+	describething
+x	lookatroom
+	tone
+x	printmessage
+	randommessage
+	blankline
+	getnumberinput
+	askquestion
+	changepassageway
+-	turnflagon
+-	turnflagoff
+-	toggleflag
+-	turncounteron
+-	turncounteroff
+x	setvariableto
+x	addtovariable
+x	subtractfromvariable
+	addvariables
+	subtractvariables
+	randomvariable
+	makevarroomnum
+	makevarnounnum
+	makevarobjectnum
+	gotovariableroom
+	sendtovariableroom
+	getvariableit
+	printvariablemessage
+	nountovariable
+	objecttovariable
+	wingame
+x	endgame
+	quitthiscmd
+	quitallcmds
+x	donewithturn
+x	redirectto
+	
