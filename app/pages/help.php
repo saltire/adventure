@@ -2,9 +2,9 @@
 	<head>
 		<title>Help &ndash; Adventure Engine</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>/style.css" />
-		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>/js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo $webroot; ?>/style.css" />
+		<script type="text/javascript" src="<?php echo $webroot; ?>/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="<?php echo $webroot; ?>/js/script.js"></script>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-1741247-5']);
@@ -57,7 +57,7 @@
 				</p>
 			</div>
 
-			<form id="goback" method="get" action="<?php echo WEB_ROOT;?>/">
+			<form id="goback" method="get" action="<?php echo $webroot;?>/">
 				<button class="border">OK, Let's Play!</button>
 			</form>
 		</div>

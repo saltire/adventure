@@ -1,18 +1,22 @@
 <?php
 ob_start();
-include APP_ROOT . '/pages/fetch.php';
+include "$approot/pages/fetch.php";
 $json = ob_get_clean();
 $output = json_decode($json, 1);
+
+// show raw json output
 //echo $json;
+
+// show debug messages
 //echo $output['debug'];
 ?>
 <html>
 	<head>
 		<title><?php echo $output['title']; ?> &ndash; Adventure Engine</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>/style.css" />
-		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>/js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="<?php echo WEB_ROOT; ?>/js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo $webroot; ?>/style.css" />
+		<script type="text/javascript" src="<?php echo $webroot; ?>/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="<?php echo $webroot; ?>/js/script.js"></script>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-1741247-5']);
@@ -42,12 +46,12 @@ $output = json_decode($json, 1);
 				<button class="border" type="submit">Continue...</button>
 			</form>
 
-			<form id="newgame" method="post" action="<?php echo WEB_ROOT; ?>/">
+			<form id="newgame" method="post" action="<?php echo $webroot; ?>/">
 				<input type="hidden" name="action" value="newgame" />
 				<button class="border" type="submit">New game</button>
 			</form>
 
-			<form id="help" method="get" action="<?php echo WEB_ROOT;?>/help">
+			<form id="help" method="get" action="<?php echo $webroot;?>/help">
 				<button class="border">Help</button>
 			</form>
 

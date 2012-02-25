@@ -1,5 +1,7 @@
 <?php
 
+require_once "$approot/classes/engine.php";
+
 class AdventureEngineBase extends AdventureEngine {
 
 	// TESTS

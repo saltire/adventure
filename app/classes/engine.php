@@ -1,5 +1,8 @@
 <?php
 
+require_once "$approot/classes/game.php";
+require_once "$approot/classes/state.php";
+
 class AdventureEngine {
 	// this class is designed to execute one turn of an adventure game,
 	// whose general data is stored in the AdventureGame class,
@@ -17,8 +20,8 @@ class AdventureEngine {
 	private $status = 'ok';
 	private $message = '';
 
-	public function __construct($game) {
-		$this->game = new AdventureGame($game);
+	public function __construct($gamefile) {
+		$this->game = new AdventureGame($gamefile);
 		$this->state = new AdventureState($this->game);
 	}
 
@@ -138,8 +141,8 @@ class AdventureEngine {
 
 	private function splitMessageQueue() {
 		echo "split message queue\n";
-		list($this->message, $queued) = explode('%PAUSE%', $this->message, 2);
-		if ($queued) {
+		if (strpos($this->message, '%PAUSE%') !== false) {
+			list($this->message, $queued) = explode('%PAUSE%', $this->message, 2);
 			echo "queueing message. deferring status: $this->status\n";
 			$this->state->queueMessage($queued, $this->status);
 			$this->status = 'paused';

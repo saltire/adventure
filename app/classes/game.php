@@ -11,10 +11,10 @@ class AdventureGame {
 	private $config = array();
 	private $vars = array();
 
-	public function __construct($game) {
+	public function __construct($gamefile) {
 		// TODO: add error checking, show a list of errors at the end
 
-		$adv = simplexml_load_file(APP_ROOT . "/games/$game.xml");
+		$adv = simplexml_load_file($gamefile);
 
 		foreach ($adv->info->children() as $id => $info) {
 			$this->info["$id"] = "$info";
@@ -130,7 +130,7 @@ class AdventureGame {
 	private function addWordsToVocabulary($words) {
 		$words = explode(',', $words);
 		foreach ($words as $word) {
-			if (!$this->words[$word]) {
+			if (!array_key_exists($word, $this->words)) {
 				$this->words[$word] = array();
 			}
 			$this->words[$word] = array_unique(array_merge($this->words[$word], $words));

@@ -4,26 +4,30 @@
 // that means debug messages in the adventure object won't show up directly on screen
 // instead, they are saved to the 'debug' variable in the json string
 
+require_once "$approot/classes/enginebase.php";
+
 ob_start(); // catch debug messages
 
-$adv = new AdventureEngineBase('starflight');
+$adv = new AdventureEngineBase("$approot/games/starflight.xml");
 
-// execute command
-if ($_POST['action'] == 'command') {
-	$output = $adv->doTurn($_POST['command']);
-	$message = $output['message'];
+if (array_key_exists('action', $_POST)) {
 
-// get the next part of a queued message
-} elseif ($_POST['action'] == 'continue') {
-	$output = $adv->getQueuedMessage();
-	$message = $output['message'];
-
-// start a new game
-} elseif ($_POST['action'] == 'newgame') {
-	$output = $adv->startNewGame();
-	$message = $output['message'];
-
-// default
+	// execute command
+	if ($_POST['action'] == 'command') {
+		$output = $adv->doTurn($_POST['command']);
+		$message = $output['message'];
+	
+	// get the next part of a queued message
+	} elseif ($_POST['action'] == 'continue') {
+		$output = $adv->getQueuedMessage();
+		$message = $output['message'];
+	
+	// start a new game
+	} elseif ($_POST['action'] == 'newgame') {
+		$output = $adv->startNewGame();
+		$message = $output['message'];
+	}
+	
 } else {
 	$output = $adv->getLastTurn();
 	if ($output) {
