@@ -15,7 +15,7 @@ $output = json_decode($json, 1);
 		<title><?php echo $output['title']; ?> &ndash; Adventure Engine</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="<?php echo $webroot; ?>/style.css" />
-		<script type="text/javascript" src="<?php echo $webroot; ?>/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="<?php echo $webroot; ?>/js/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="<?php echo $webroot; ?>/js/script.js"></script>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
