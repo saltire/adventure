@@ -72,15 +72,14 @@ class AdventureEngine {
 
 		// replace wildcards in output
 		$this->message = $this->insertInputWords($this->message);
-		$search = array(
-				'`%TURNS`e',
-				'`%VAR\((.*?)\)`e'
-		);
-		$replace = array(
-				'$this->state->getTurnNumber()',
-				'$this->state->getVar(\'$1\')'
-		);
-		$this->message = preg_replace($search, $replace, $this->message);
+		$this->message = preg_replace_callback_array( [
+                '`%TURNS`' => function (&$matches) {
+                    return $this->state->getTurnNumber();
+                },
+                '`%VAR\((.*?)\)`' => function (&$matches) {
+                    return $this->state->getVar($matches[1]);
+                }		
+           	 ],$this->message);
 
 		// log output and status, break up into segments if necessary
 		$this->state->logOutput($this->message);
